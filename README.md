@@ -12,6 +12,7 @@
 2. run `conan export-pkg . -s os=Windows -s arch=x86_64 -nr --user lxrui --channel test`
 
 ### build consume demo
-1. mkdir build && cd build
-2. config cmake: `cmake -A x64 -DCMAKE_BUILD_TYPE=Debug consume/consume_demo`
-3. compile: `cmake --build . --config Debug`
+1. cd consume/consume_demo
+2. config cmake: `cmake -G "Visual Studio 15 2017 Win64" -B build -S . -DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=..\cmake\conan_provider.cmake`
+3. cd build
+4. compile: `cmake --build . --config Debug`
